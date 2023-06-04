@@ -1,10 +1,10 @@
-package cajaregistradora;
+package productos;
 
 /**
  * @author David Elias González García
  * PROTECO, Gen 44 :)
  */
-public class Productos {
+public abstract class Productos {
     
     public float precio;
     public String nombre;
@@ -16,8 +16,10 @@ public class Productos {
 	this.nombre = nom;
 	this.codigo = cod;
     }
-
-
+    
     // Métodos
+    public void what(){
+        // Qué es el producto
+    }
 
 }

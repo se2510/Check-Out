@@ -15,5 +15,17 @@ This project has the objetive to implement the basics of POO with java.
 
 ## 📃 About 📃 
 
-Developed with the Apache NetBeans IDE for Java. This app has a GUI for 
+Developed with the Apache NetBeans IDE 17 for Java. 
+<!-- This app has a GUI for an easy information deployment. -->
+
+## :boom: Features :boom:
+
+-  **Items riged by a code**: Everything has a code, which you can introduce to buy that item.
+- **Payment**: You can pay with efective and with a card.
+  - Cash: Has the 1, 2, 5, 10 coin.
+  - Card: 16 digits exactly, and a verified NIP.
+- **Promo**: Has the option to "send" promo to the costumer.
+- **Ticket**: Has the possibility to generate a ticket with txt format. 
+
+
 
