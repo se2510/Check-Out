@@ -18,5 +18,9 @@ public abstract class Productos {
     }
     
     // Métodos
+    /**
+    * Este método describe al producto
+    * @return No retorna ningún valor
+    */
     public abstract String what();
 }

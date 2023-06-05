@@ -16,7 +16,7 @@ public class Limpieza extends Productos {
     // Métodos
     @Override
     public String what(){
-        String a =this.nombre+" con un porcentaje de limpieza del %"+this.porcentaje+"ml, a $"+this.precio;
+        String a =this.nombre+" con un porcentaje de limpieza del %"+this.porcentaje+", a $"+this.precio;
         return a;
     }
 }

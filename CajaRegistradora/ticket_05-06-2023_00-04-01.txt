@@ -1,0 +1,12 @@
+================== TICKET DE COMPRA ================
+Fecha: 05-06-2023_00-04-01
+====================================================
+Artículos comprados:
+Terreneitor                    35.0            24             
+Esponja Abrasiva               10.0            16             
+Refresco Naranja (Fanta)       15.0            10             
+Jugo Uva (Delaware)            12.0            9              
+====================================================
+Monto total: $72.0
+Cambio: $28.0
+¡Gracias por su compra! Regrese pronto.

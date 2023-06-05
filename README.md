@@ -24,8 +24,8 @@ Developed with the Apache NetBeans IDE 17 for Java.
 - **Payment**: You can pay with efective and with a card.
   - Cash: Has the 1, 2, 5, 10 coin.
   - Card: 16 digits exactly, and a verified NIP.
-- **Promo**: Has the option to "send" promo to the costumer.
 - **Ticket**: Has the possibility to generate a ticket with txt format. 
+<!-- - **Promo**: Has the option to "send" promo to the costumer. --> 
 
 
 
