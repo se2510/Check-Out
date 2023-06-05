@@ -263,19 +263,25 @@ public class CajaRegistradora {
             System.out.println("Ingresa el valor de la moneda/billete con el que deseas pagar: ");
             System.out.println("Monedas que puedes ingresar: $1 , $2, $5, $10 ");
             System.out.println("Billetes que puedes ingresar: $20, $50, $100, $200, $500");
-            int valor = entrada.nextInt();
+            // Verificar si la entrada es un número válido
+            if (entrada.hasNextInt()) {
+                int valor = entrada.nextInt();
 
-            if (valor == 1 || valor == 2 || valor == 5 || valor == 10 || valor == 20 || valor == 50 ||
-                    valor == 100 || valor == 200 || valor == 500) {
-                montoPagado += valor;
-                cambio = montoPagado - montoTotal;
+                if (valor == 1 || valor == 2 || valor == 5 || valor == 10 || valor == 20 || valor == 50 ||
+                        valor == 100 || valor == 200 || valor == 500) {
+                    montoPagado += valor;
+                    cambio = montoPagado - montoTotal;
 
-                if (montoPagado < montoTotal) {
-                    System.out.println("Monto pagado hasta ahora: $" + montoPagado);
-                    System.out.println("Falta por pagar: $" + (montoTotal - montoPagado));
+                    if (montoPagado < montoTotal) {
+                        System.out.println("Monto pagado hasta ahora: $" + montoPagado);
+                        System.out.println("Falta por pagar: $" + (montoTotal - montoPagado));
+                    }
+                } else {
+                    System.out.println("Valor no válido. Por favor, intenta de nuevo.");
                 }
             } else {
-                System.out.println("Valor no válido. Por favor, intenta de nuevo.");
+                System.out.println("Número inválido. Por favor, intenta de nuevo.");
+                entrada.next(); // Descartar entrada inválida
             }
         }
 
@@ -301,15 +307,15 @@ public class CajaRegistradora {
 
         System.out.println("Monto total a pagar: $" + montoTotal);
 
-        while(true){
+        while (true) {
             System.out.println("Ingresa el número de tarjeta (16 dígitos): ");
-            long numeroTarjeta = entrada.nextLong();
+            String numeroTarjeta = entrada.next();
 
             System.out.println("Ingresa el NIP (4 dígitos): ");
-            int nip = entrada.nextInt();
+            String nip = entrada.next();
 
-            // Verifica que los datos de la tarjetini sean correctos
-            if (String.valueOf(numeroTarjeta).length() == 16 && String.valueOf(nip).length() == 4) {
+            // Verifica que los datos de la tarjetini sean números válidos
+            if (numeroTarjeta.matches("\\d{16}") && nip.matches("\\d{4}")) {
                 System.out.println("¡Pago con tarjeta realizado con éxito!");
 
                 generarTicket(carrito, montoTotal, 0.0f, "tarjeta"); // Generar ticket de compra
