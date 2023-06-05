@@ -17,7 +17,8 @@ public class Bebida extends Productos {
     
     // Métodos
     @Override
-    public void what(){
-        // Qué es el producto
+    public String what(){
+        String a = "Bebida "+this.nombre+" de sabor "+this.sabor+", con "+this.volumen+"ml, a $"+this.precio;
+        return a;
     }
 }

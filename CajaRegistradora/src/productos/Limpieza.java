@@ -5,17 +5,18 @@ package productos;
  * PROTECO, Gen 44 :)
  */
 public class Limpieza extends Productos {
-    String porcentaje;
+    float porcentaje;
     
     // Constructor
-    public Limpieza(float precio, String nom, int cod, String por) {
+    public Limpieza(float precio, String nom, int cod, float por) {
         super(precio, nom, cod);
         this.porcentaje = por;
     }
     
     // Métodos
     @Override
-    public void what(){
-        // Qué es el producto
+    public String what(){
+        String a =this.nombre+" con un porcentaje de limpieza del %"+this.porcentaje+"ml, a $"+this.precio;
+        return a;
     }
 }

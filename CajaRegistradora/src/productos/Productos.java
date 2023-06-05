@@ -18,8 +18,5 @@ public abstract class Productos {
     }
     
     // Métodos
-    public void what(){
-        // Qué es el producto
-    }
-
+    public abstract String what();
 }

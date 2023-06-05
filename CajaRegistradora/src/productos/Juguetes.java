@@ -17,7 +17,9 @@ public class Juguetes extends Productos {
     
     // Métodos
     @Override
-    public void what(){
-        // Qué es el producto
+    public String what(){
+        String a = "Juguete "+this.nombre+" de "+this.Tipo+", para niños de "+this.edad+", a $"+this.precio;
+        //System.out.println("Juguete "+this.nombre+" de "+this.Tipo+", para niños de "+this.edad+", a $"+this.precio)
+        return a;
     }
 }
