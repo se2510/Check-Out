@@ -25,49 +25,67 @@ public class CajaRegistradora {
         
         do {
             menu(); // impresión del menu
-            opcion = entrada.nextInt(); // Lectura de la entrada
-            List<Productos> carrito = new ArrayList<>();  // Lista del carrito
 
-            switch (opcion) {
-                case 1: // Ver artículos
-                    System.out.println("Has seleccionado la opción 'Ver artículos'");
-                    verArticulos(Catalogo);
-                    break;
-                case 2: // Comprar
-                    System.out.println("Has seleccionado la opción 'Comprar'");
-                    //List<Productos> carrito = new ArrayList<>();  // Lista del carrito
-                    carrito = comprar(Catalogo); // Articulos a comprar se almacenarán en el carrito
-                    int opcPago;
-                    do{
-                        System.out.println("Elige tu método de pago: ");
-                        System.out.println("1) Pago en efectivo");
-                        System.out.println("2) Pago con tarjetini ");
-                        opcPago = entrada.nextInt();
-                        switch (opcPago){
-                            case 1:
-                                pagarEfectivo(carrito);
-                                opcPago = 3;
-                                break;
-                            case 2:
-                                pagarTarjeta(carrito);
-                                opcPago = 3;
-                                break;
-                            default:
-                                System.out.println("Opción no válida.");
-                                break;
-                        }
-                        opcion = 3;
-                    }while(opcPago != 3);
-                    
-                    break;
-                case 3: // Salir
-                    System.out.println("Gracias por acompañarnos, buen día! :D");
-                    break;
-                default:
-                    System.out.println("Opción no válida");
-                    break;
+            // Verificar si la entrada es un número válido
+            if (entrada.hasNextInt()) {
+                opcion = entrada.nextInt(); // Lectura de la entrada
+
+                List<Productos> carrito = new ArrayList<>();  // Lista del carrito
+
+                switch (opcion) {
+                    case 1: // Ver artículos
+                        System.out.println("Has seleccionado la opción 'Ver artículos'");
+                        verArticulos(Catalogo);
+                        break;
+                    case 2: // Comprar
+                        System.out.println("Has seleccionado la opción 'Comprar'");
+                        carrito = comprar(Catalogo); // Articulos a comprar se almacenarán en el carrito
+                        int opcPago;
+
+                        do {
+                            System.out.println("Elige tu método de pago: ");
+                            System.out.println("1) Pago en efectivo");
+                            System.out.println("2) Pago con tarjetini ");
+
+                            // Verificar si la entrada es un número válido
+                            if (entrada.hasNextInt()) {
+                                opcPago = entrada.nextInt();
+
+                                switch (opcPago) {
+                                    case 1:
+                                        pagarEfectivo(carrito);
+                                        opcPago = 3;
+                                        break;
+                                    case 2:
+                                        pagarTarjeta(carrito);
+                                        opcPago = 3;
+                                        break;
+                                    default:
+                                        System.out.println("Opción no válida.");
+                                        break;
+                                }
+                                opcion = 3;
+                            } else {
+                                System.out.println("Número inválido. Por favor, intenta de nuevo.");
+                                entrada.next(); // Descartar entrada inválida
+                                opcPago = 0;
+                            }
+                        } while (opcPago != 3);
+                        break;
+                    case 3: // Salir
+                        System.out.println("Gracias por acompañarnos, buen día! :D");
+                        break;
+                    default:
+                        System.out.println("Opción no válida");
+                        break;
+                }
+            } else {
+                System.out.println("Número inválido. Por favor, intenta de nuevo.");
+                entrada.next(); // Descartar entrada inválida
+                opcion = 0;
             }
         } while (opcion != 3);
+
         
         
         
